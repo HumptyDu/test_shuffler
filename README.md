@@ -3,15 +3,15 @@
 This is a python script that takes at least one text file as an input and creates a cycle of infinitely shuffling questions. Used to practice vocab for new classes.
 
 ### Input
-It takes text files with the following formatting:
-key - value
-key - value
-key - value
+It takes text files with the following formatting:\n
+key - value\n
+key - value\n
+key - value\n
 ...
 
-A more concrete example (say, a Spanish-English mapping with the topic of ):
-el ajo - garlic
-el atún - tuna
+A more concrete example (say, a Spanish-English mapping with the topic of ):\n
+el ajo - garlic\n
+el atún - tuna\n
 la cereza - cherry
 (A more concrete example can be viewied in the 2_food_myLab.txt file provided in this repo)
 
@@ -26,11 +26,11 @@ Note: This means that there can be NO dashes in either the keys or the values.
 
 ### To Implmenet
 For all my projects, I really like listing out potential features to add. Here are a few for this project:
-- The ability to star questions
+- [ ] The ability to star questions
     - Often, when reviewing vocab, certain words are harder to remember 
     - Inter-categorical starring (for practicing for finals, for example)
-- Mix and max categores (without starred words)
-- Accept more than just a text file
+- [ ] Mix and max categores (without starred words)
+- [ ] Accept more than just a text file
     - Images
     - Word docs
     - Google Drive doc links
