@@ -43,7 +43,7 @@ def handle_option(bit, lang):
     if bit == "d":
         print(all_cats)
         d = input("Select the name of the category you want to delete: ")
-        #iterate through the shit and delete it idk
+        #iterate through and delete 
 
     if bit == "e": pass
     
@@ -87,6 +87,3 @@ def main():
     run_cat("food")
 
 main()
-
-#to add: an option to STAR a word
-#implement different text formats
