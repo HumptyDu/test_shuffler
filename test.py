@@ -74,8 +74,8 @@ def handle_option(bit, lang):
     
 '''
 Summary: Shuffles the questions in the categories. 
-Params :
-Output :
+Params : The name of the category to run
+Output : Printing of questions and their respective solutions
 '''
 def run_cat(name, lang=1):
     cat = {}
