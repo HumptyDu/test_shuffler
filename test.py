@@ -1,7 +1,19 @@
 import random
 
+# A list of all categories the user inputs
 all_cats = []
 
+'''
+Summary: Iniliazes a user-inputted category by formatting the given text file in a python dictionairy with the following format: 
+         category = {
+             name: name_of_category,
+             key: value,
+             key: value,
+             ...
+         }
+Params : An empty dictionairy cat_dict, the RELATIVE path of the text file to be extracted path. 
+Output : A dictionairy with the formal described in the summary. 
+'''
 def init_cat(cat_dict, path):
     f = open(path, "r")
 
@@ -14,12 +26,25 @@ def init_cat(cat_dict, path):
 
     return cat_dict
 
+
+'''
+Summary: Adds the user category to the all_cats list, ensuring that the path is provided
+         NOTE: This function does not check the validity of the path - that is on my list of features to add 
+Params : The name of the category to add name, the path of the text file to process path
+Output : None - this is essentially a helper function 
+'''
 def add_cat(name, path=""):
     temp = {"name": name}
     if path == "": path = input("Enter the full path of the file to process: ")
     init_cat(temp, path)
     all_cats.append(temp) 
 
+
+'''
+Summary: Handles user input for options.
+Params : 
+Output : 
+'''
 def handle_option(bit, lang):
     valid = "avdes"
 

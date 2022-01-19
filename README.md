@@ -35,6 +35,7 @@ For all my projects, I really like listing out potential features to add. Here a
 - [ ] The ability to star questions
     - Often, when reviewing vocab, certain words are harder to remember 
     - Inter-categorical starring (for practicing for finals, for example)
+- [ ] A path validator for the text file (see test.py add_cat function for more details)
 - [ ] Mix and max categores (without starred words)
 - [ ] Accept more than just a text file
     - Images
