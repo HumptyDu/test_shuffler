@@ -72,6 +72,11 @@ def handle_option(bit, lang):
 
     if bit == "e": pass
     
+'''
+Summary: Shuffles the questions in the categories. 
+Params :
+Output :
+'''
 def run_cat(name, lang=1):
     cat = {}
     for cur_cat in all_cats:
