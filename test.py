@@ -42,8 +42,8 @@ def add_cat(name, path=""):
 
 '''
 Summary: Handles user input for options.
-Params : 
-Output : 
+Params : The one-letter string that specifies which function to run bit, the current mode of the languages lang 
+Output : Depends on the bit parameter 
 '''
 def handle_option(bit, lang):
     valid = "avdes"
