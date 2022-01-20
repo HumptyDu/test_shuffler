@@ -1,4 +1,5 @@
 import random
+from sys import exit
 
 # A list of all categories the user inputs
 all_cats = []
@@ -66,10 +67,26 @@ def handle_option(bit, lang):
         run_cat("food", lang*-1)
 
     if bit == "d":
-        print(all_cats)
-        d = input("Select the name of the category you want to delete: ")
-        #iterate through and delete 
+        if len(all_cats) == 1:
+            print("ERROR: There is only one category - you can not delete it.")
+            return False
+        
+        #Prints all categories to delete
+        handle_option("v", 1)
 
+        d = input("Select the name of the category you want to delete: ")
+        for i in range(len(all_cats)):
+            if(all_cats[i]["name"] == d): 
+                all_cats.pop(i)
+                print("Successfully removed " + d)
+
+                #prompt user for category to run
+                r = input("Which category would you like to run now? ")
+                run_cat(r)
+                return True
+        print("Could not find the category")
+        return False
+        
     if bit == "e": pass
     
 '''
@@ -84,13 +101,13 @@ def run_cat(name, lang=1):
             cat = cur_cat
             break
 
-    if cat == {}: pass #throw an error 
+    if cat == {}: pass #throw an error, category not found
 
     entry_list = list(cat.keys())
     
     print("Type q to exit or o for more options")
     while True:
-        rand =  random.randint(0, len(entry_list)-1)
+        rand =  random.randint(1, len(entry_list)-1)
 
         if lang == 1:
             q = entry_list[rand]
@@ -100,7 +117,7 @@ def run_cat(name, lang=1):
             ans = entry_list[rand]
 
         x = input(q)
-        if x == "q": break
+        if x == "q": exit()
         if x == "o":
             print("a - add a new category")
             print("v - view current categories")
