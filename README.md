@@ -39,6 +39,7 @@ For all my projects, I really like listing out potential features to add. Here a
 - [ ] Mix and max categores (without starred words)
 - [ ] Don't ask the same question
     - Maybe not twice in a row?
+- [ ] Save edited categories and list of all categories to a file, have the option to load / save "states"
 - [ ] Accept more than just a text file
     - Images
     - Word docs

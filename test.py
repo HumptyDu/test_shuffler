@@ -167,7 +167,7 @@ def run_cat(name, lang=1):
 def main():
     path = "./2_food_myLab.txt"
     add_cat("food",path)
-    add_cat("rand","./r1.txt", "=")
+    add_cat("rand","./random_1.txt", "=")
     run_cat("food")
 
 main()
