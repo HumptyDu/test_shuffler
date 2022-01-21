@@ -3,6 +3,7 @@ from sys import exit
 
 # A list of all categories the user inputs
 all_cats = []
+cur_cat = ""
 
 '''
 Summary: Iniliazes a user-inputted category by formatting the given text file in a python dictionairy with the following format: 
@@ -15,12 +16,12 @@ Summary: Iniliazes a user-inputted category by formatting the given text file in
 Params : An empty dictionairy cat_dict, the RELATIVE path of the text file to be extracted path. 
 Output : A dictionairy with the formal described in the summary. 
 '''
-def init_cat(cat_dict, path):
+def init_cat(cat_dict, path, splitter="-"):
     f = open(path, "r")
 
     for line in f:
         if line == "\n": continue
-        a = line.split("-")
+        a = line.split(splitter)
         a[1] = a[1].strip("\n")
         a[1] = a[1][1:]+a[1][0]
         cat_dict[a[0]] = a[1]
@@ -34,11 +35,23 @@ Summary: Adds the user category to the all_cats list, ensuring that the path is 
 Params : The name of the category to add name, the path of the text file to process path
 Output : None - this is essentially a helper function 
 '''
-def add_cat(name, path=""):
+def add_cat(name, path="", splitter="-"):
     temp = {"name": name}
     if path == "": path = input("Enter the full path of the file to process: ")
-    init_cat(temp, path)
+    init_cat(temp, path, splitter)
     all_cats.append(temp) 
+
+
+'''
+Summary: Either deletes, adds
+Params : The option the user selects bit
+Output : The desired editing of the desired category 
+'''
+def handle_cat_edit(bit, cat):
+    #find category
+    #a bunch of if statements to check what you can do
+    #add logic later
+    return True
 
 
 '''
@@ -46,8 +59,8 @@ Summary: Handles user input for options.
 Params : The one-letter string that specifies which function to run bit, the current mode of the languages lang 
 Output : Depends on the bit parameter 
 '''
-def handle_option(bit, lang):
-    valid = "avdes"
+def handle_option(bit, lang=1):
+    valid = "avdesr"
 
     if bit not in valid:
         print("ERROR: You did not provide a valid option")
@@ -64,7 +77,7 @@ def handle_option(bit, lang):
 
     if bit == "s":
         print("Inversed order of languages.")
-        run_cat("food", lang*-1)
+        run_cat(cur_cat, lang*-1)
 
     if bit == "d":
         if len(all_cats) == 1:
@@ -72,7 +85,7 @@ def handle_option(bit, lang):
             return False
         
         #Prints all categories to delete
-        handle_option("v", 1)
+        handle_option("v")
 
         d = input("Select the name of the category you want to delete: ")
         for i in range(len(all_cats)):
@@ -80,14 +93,33 @@ def handle_option(bit, lang):
                 all_cats.pop(i)
                 print("Successfully removed " + d)
 
-                #prompt user for category to run
+                #runs a new category (in case user deletes current category)
+                print("Current categories: ")
+                handle_option("v")
                 r = input("Which category would you like to run now? ")
                 run_cat(r)
-                return True
         print("Could not find the category")
         return False
         
-    if bit == "e": pass
+    if bit == "e": 
+        #which category to edit?
+        print("Current categories: ")
+        handle_option("v")
+        c = input("Which category would you like to edit? ")
+        print("What would you like to do? ")
+        print("r - rename")
+        print("c - change a word")
+        print("a - add a word")
+        print("r - remove a word")
+        o = input("What would you like to do? ")
+        handle_cat_edit(o, c)
+
+    if bit == "r":
+        print("Current categories: ")
+        handle_option("v")
+        r = input("Which category would you like to run now? ")
+        run_cat(r)
+
     
 '''
 Summary: Shuffles the questions in the categories. 
@@ -96,13 +128,14 @@ Output : Printing of questions and their respective solutions
 '''
 def run_cat(name, lang=1):
     cat = {}
-    for cur_cat in all_cats:
-        if cur_cat["name"] == name: 
-            cat = cur_cat
+    for c in all_cats:
+        if c["name"] == name: 
+            cat = c
             break
 
     if cat == {}: pass #throw an error, category not found
 
+    cur_cat = cat["name"]
     entry_list = list(cat.keys())
     
     print("Type q to exit or o for more options")
@@ -124,6 +157,7 @@ def run_cat(name, lang=1):
             print("d - delete a category")
             print("e - edit a category")
             print("s - swap qs/as in the current category")
+            print("r - run a new category")
             o = input("Choose an option: ")
             handle_option(o, lang)
         if x != "o": print(ans)
@@ -133,6 +167,7 @@ def run_cat(name, lang=1):
 def main():
     path = "./2_food_myLab.txt"
     add_cat("food",path)
+    add_cat("rand","./r1.txt", "=")
     run_cat("food")
 
 main()

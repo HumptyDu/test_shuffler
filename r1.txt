@@ -1,0 +1,35 @@
+Aburrido = Bored
+
+Ala = Wing
+
+Algodon = Cotton
+
+Ah? = Huh?
+
+Angel = Angel
+
+Aprender = Learn
+
+Arbol = Tree
+
+Aterrorizado = Terrified
+
+Bailarin = Ballet dancer
+
+Bueno = Good
+
+Caja = Box
+
+Calabaza = Pumpkin
+
+Camión = Truck
+
+Camiseta = T-shirt
+
+Cansado = Tired
+
+Cielo = Heaven, Sky
+
+Computadora = Computer
+
+Contento = Happy

@@ -37,6 +37,8 @@ For all my projects, I really like listing out potential features to add. Here a
     - Inter-categorical starring (for practicing for finals, for example)
 - [ ] A path validator for the text file (see test.py add_cat function for more details)
 - [ ] Mix and max categores (without starred words)
+- [ ] Don't ask the same question
+    - Maybe not twice in a row?
 - [ ] Accept more than just a text file
     - Images
     - Word docs
