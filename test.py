@@ -48,9 +48,19 @@ Params : The option the user selects bit
 Output : The desired editing of the desired category 
 '''
 def handle_cat_edit(bit, cat):
-    #find category
-    #a bunch of if statements to check what you can do
-    #add logic later
+    valid = "rcad" #rename, change word, add word, delete
+    if bit not in valid:
+        print("ERROR: Provided input is not correct")
+    found_cat = {}
+    for c in all_cats:
+        if c["name"]==cat: 
+            found_cat = cat
+            break
+    if found_cat == {}:
+        print("ERROR: Category not found. ")
+        return False
+
+
     return True
 
 
@@ -110,7 +120,7 @@ def handle_option(bit, lang=1):
         print("r - rename")
         print("c - change a word")
         print("a - add a word")
-        print("r - remove a word")
+        print("d - remove a word")
         o = input("What would you like to do? ")
         handle_cat_edit(o, c)
 

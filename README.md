@@ -45,3 +45,8 @@ For all my projects, I really like listing out potential features to add. Here a
     - Word docs
     - Google Drive doc links
     - Maybe certain audio files
+
+### Potential / Known Bugs
+- Handle_cat_edit and handle_option functions:
+    - The following line of code ```if bit not in valid: ``` can return false if a multi-character bit in the valid string is passed
+        - Ex: say valid = "avdesr". If av is passed in as the bit parameter, then the previous line of code can return false, when it should return true.  
