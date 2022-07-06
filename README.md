@@ -45,6 +45,7 @@ For all my projects, I really like listing out potential features to add. Here a
     - Word docs
     - Google Drive doc links
     - Maybe certain audio files
+- [ ] Image questions
 
 ### Potential / Known Bugs
 - Handle_cat_edit and handle_option functions:
