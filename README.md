@@ -46,6 +46,7 @@ For all my projects, I really like listing out potential features to add. Here a
     - Google Drive doc links
     - Maybe certain audio files
 - [ ] Image questions
+- [ ] Priority system - maintain random question ordering, but ensure that a certain question appears before another one (or multiple others)
 
 ### Potential / Known Bugs
 - Handle_cat_edit and handle_option functions:
